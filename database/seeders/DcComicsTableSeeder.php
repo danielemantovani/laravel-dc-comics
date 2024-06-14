@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Comic;
+use App\Models\DcComic;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +16,7 @@ class DcComicsTableSeeder extends Seeder
         $comics = config('comics');
         foreach($comics as $comic){
             // Comic è il nome del model
-            $newComics = new Comic;
+            $newComics = new DcComic;
             $newComics->title = $comic['title'];
             $newComics->description = $comic['description'];
             $newComics->thumb = $comic['thumb'];

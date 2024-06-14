@@ -11,7 +11,7 @@ class DcComicController extends Controller
      */
     public function index()
     {
-        //
+        return view('dc_comics.index');
     }
 
     /**

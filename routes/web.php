@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DcComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+// Route::get('/dc_comics', [DcComicController::class, 'index'])->name('dc_comics.index');
+// Route::get('/dc_comics/{dc_comic}', [DcComicController::class, 'show'])->name('dc_comics.show');
+
+Route::resource('dc_comics', DcComicController::class);

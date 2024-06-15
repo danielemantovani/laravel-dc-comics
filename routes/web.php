@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// Route::get('/dc_comics', [DcComicController::class, 'index'])->name('dc_comics.index');
-// Route::get('/dc_comics/{dc_comic}', [DcComicController::class, 'show'])->name('dc_comics.show');
+// Route::get('/dc-comics', [DcComicController::class, 'index'])->name('dc-comics.index');
+// Route::get('/dc-comics/{dc-comic}', [DcComicController::class, 'show'])->name('dc-comics.show');
 
 Route::resource('dc-comics', DcComicController::class);

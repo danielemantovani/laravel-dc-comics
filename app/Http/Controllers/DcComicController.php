@@ -35,9 +35,9 @@ class DcComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DcComic $comic)
+    public function show(DcComic $dcComic)
     {
-        return view('dc_comics.show', compact('DcComic'));
+        return view('dc_comics.show', compact('dcComic'));
     }
 
     /**

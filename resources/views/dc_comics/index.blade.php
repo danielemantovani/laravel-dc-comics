@@ -21,7 +21,7 @@
                     <td>{{$comic->series}}</td>
                     <td>{{$comic->type}}</td>
                     <td>{{$comic->price}}</td>
-                    <td><button class="btn btn-primary"><a class="text-white" href="{{route('dc-comics.show', ['dc_comic' => $comic->id]) }}}}">Dettagli</a></button></td>
+                    <td><button class="btn btn-primary"><a class="text-white" href="{{route('dc-comics.show', ['dc_comic' => $comic->id])}}">Dettagli</a></button></td>
                 </tr>
             @endforeach
         </tbody>

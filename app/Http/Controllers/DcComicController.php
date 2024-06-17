@@ -56,9 +56,11 @@ class DcComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, DcComic $dcComic)
     {
-        //
+        $data = $request->all();
+        $dcComic->update($data);
+        return redirect()->route('dc-comics.show', ['dc_comic'=> $dcComic->id]);
     }
 
     /**

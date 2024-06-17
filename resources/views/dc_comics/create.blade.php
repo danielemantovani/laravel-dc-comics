@@ -22,10 +22,6 @@
                 <input type="text" class="form-control" id="title" name="serie">
             </div>
             <div class="mb-3">
-                <label for="type" class="form-label">Titolo</label>
-                <input type="text" class="form-control" id="type" name="type">
-            </div>
-            <div class="mb-3">
                 <label for="date" class="form-label">Data di uscita</label>
                 <input type="text" class="form-control" id="date" name="sale_date">
             </div>

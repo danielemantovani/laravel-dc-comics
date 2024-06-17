@@ -29,7 +29,11 @@ class DcComicController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $data = $request->all();
+        $comic = new DcComic();
+        $comic->fill($data);
+        $comic->save();
+        return redirect()->route('dc-comics.show', ['dc_comic'=> $comic->id]);
     }
 
     /**

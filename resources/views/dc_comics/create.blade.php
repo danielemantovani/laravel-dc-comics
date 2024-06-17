@@ -19,20 +19,22 @@
             </div>
             <div class="mb-3">
                 <label for="series" class="form-label">Serie</label>
-                <input type="text" class="form-control" id="title" name="serie">
+                <input type="text" class="form-control" id="series" name="series">
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Data di uscita</label>
                 <input type="text" class="form-control" id="date" name="sale_date">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Prezzo</label>
+                <input type="text" class="form-control" id="price" name="price">
             </div>
             <div class="mb-5">
                 <label for="description" class="form-label">Descrizione</label>
                 <textarea class="form-control" id="description" rows="3" name="description"></textarea>
             </div>
             <div>
-                <button class="btn btn-primary">
-                    <a class="text-white" href="">Invia</a>
-                </button>
+                <button class="btn btn-primary">Invia</button>
             </div>
         </form>
     </div>

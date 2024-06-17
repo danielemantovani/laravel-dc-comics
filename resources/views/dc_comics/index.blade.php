@@ -28,8 +28,9 @@
                     <td>{{ $comic->type }}</td>
                     <td>{{ $comic->price }}</td>
                     <td>
-                        <button class="btn btn-info"><a class="text-white"
-                                href="{{ route('dc-comics.show', ['dc_comic' => $comic->id]) }}">Dettagli</a></button>
+                        <button class="btn btn-info">
+                            <a class="text-white" href="{{ route('dc-comics.show', ['dc_comic' => $comic->id]) }}">Dettagli</a>
+                        </button>
                     </td>
                 </tr>
             @endforeach

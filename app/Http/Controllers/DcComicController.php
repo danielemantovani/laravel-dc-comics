@@ -29,11 +29,12 @@ class DcComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
      * Display the specified resource.
+     * la variabile dcComic riprende il nome della route ma senza trattino
      */
     public function show(DcComic $dcComic)
     {

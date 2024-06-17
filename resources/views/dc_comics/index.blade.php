@@ -3,7 +3,7 @@
 @section('content')
     <div class="d-flex justify-content-end p-4">
         <button class="btn btn-success ">
-            <a class="text-white" href="{{ route('dc-comics.create')}}">Aggiungi</a>
+            <a class="text-white" href="{{ route('dc-comics.create') }}">Aggiungi</a>
         </button>
     </div>
 
@@ -27,15 +27,23 @@
                     <td>{{ $comic->type }}</td>
                     <td>{{ $comic->price }}</td>
                     <td>
-                        <button class="btn btn-info">
-                            <a class="text-white" href="{{ route('dc-comics.show', ['dc_comic' => $comic->id]) }}">Dettagli</a>
-                        </button>
-                        <button class="btn btn-warning">
-                            <a class="text-white" href="{{ route('dc-comics.edit', ['dc_comic' => $comic->id])}}">Modifica</a>
-                        </button>
-                        <button class="btn btn-danger">
-                            <a class="text-white" href=""><i class="fa-solid fa-trash"></i></a>
-                        </button>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-info">
+                                <a class="text-white"
+                                    href="{{ route('dc-comics.show', ['dc_comic' => $comic->id]) }}">Dettagli</a>
+                            </button>
+                            <button class="btn btn-warning">
+                                <a class="text-white"
+                                    href="{{ route('dc-comics.edit', ['dc_comic' => $comic->id]) }}">Modifica</a>
+                            </button>
+                            <form action="{{ route('dc-comics.destroy', ['dc_comic' => $comic->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @endforeach

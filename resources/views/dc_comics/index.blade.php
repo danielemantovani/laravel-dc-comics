@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="d-flex justify-content-end p-4">
-        <button class="btn btn-warning ">
+        <button class="btn btn-success ">
             <a class="text-white" href="{{ route('dc-comics.create')}}">Aggiungi</a>
         </button>
     </div>
@@ -29,6 +29,9 @@
                     <td>
                         <button class="btn btn-info">
                             <a class="text-white" href="{{ route('dc-comics.show', ['dc_comic' => $comic->id]) }}">Dettagli</a>
+                        </button>
+                        <button class="btn btn-warning">
+                            <a class="text-white" href="{{ route('dc-comics.edit', ['dc_comic' => $comic->id])}}">Modifica</a>
                         </button>
                         <button class="btn btn-danger">
                             <a class="text-white" href=""><i class="fa-solid fa-trash"></i></a>

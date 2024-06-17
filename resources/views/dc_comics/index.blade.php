@@ -16,7 +16,6 @@
                 <th scope="col">Tipo</th>
                 <th scope="col">Prezzo</th>
                 <th scope="col">Azioni</th>
-
             </tr>
         </thead>
         <tbody>
@@ -30,6 +29,9 @@
                     <td>
                         <button class="btn btn-info">
                             <a class="text-white" href="{{ route('dc-comics.show', ['dc_comic' => $comic->id]) }}">Dettagli</a>
+                        </button>
+                        <button class="btn btn-danger">
+                            <a class="text-white" href=""><i class="fa-solid fa-trash"></i></a>
                         </button>
                     </td>
                 </tr>

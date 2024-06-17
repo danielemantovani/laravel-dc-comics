@@ -9,7 +9,7 @@
                 <th scope="col">Serie</th>
                 <th scope="col">Tipo</th>
                 <th scope="col">Prezzo</th>
-                <th scope="col">Dettagli</th>
+                <th scope="col">Azioni</th>
                 
             </tr>
         </thead>
@@ -21,7 +21,10 @@
                     <td>{{$comic->series}}</td>
                     <td>{{$comic->type}}</td>
                     <td>{{$comic->price}}</td>
-                    <td><button class="btn btn-primary"><a class="text-white" href="{{route('dc-comics.show', ['dc_comic' => $comic->id])}}">Dettagli</a></button></td>
+                    <td>
+                        <button class="btn btn-info"><a class="text-white" href="{{route('dc-comics.show', ['dc_comic' => $comic->id])}}">Dettagli</a></button>
+                        <button class="btn btn-warning"><a class="text-white" href="{{route('dc-comics.create', ['dc_comic' => $comic->id])}}">Aggiungi</a></button>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

@@ -3,6 +3,15 @@
 @section('content')
     <div class="container">
         <h2 class="mb-5">Modifica i dati del fumetto</h2>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        {{$error}}
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{route('dc-comics.update', $dcComic->id)}}" method="POST">
             @csrf
             @method('PUT')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use App\Models\DcComic;
 use Illuminate\Http\Request;
 
@@ -73,7 +74,7 @@ class DcComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DcComic $dcComic)
+    public function update(UpdateComicRequest $request, DcComic $dcComic)
     {
         $data = $request->all();
         $dcComic->update($data);

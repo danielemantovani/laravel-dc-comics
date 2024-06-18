@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreComicRequest;
 use App\Models\DcComic;
 use Illuminate\Http\Request;
 
@@ -27,20 +28,29 @@ class DcComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $request->validate([
-            'title'=>['required', 'min:5'],
-            'series'=>['required'],
-            'sale_date'=>['required'],
-            'price'=>['required'],
-            'description'=>['required'],
-        ]);
+        // per un lavoro più organizzato spostiamo le regole nel file StoreComicRequest creato tramite comando php artisan make:request StoreComicRequest
+        // $request->validate(
+        //     [
+        //         'title' => ['required', 'min:5'],
+        //         'type'=> ['required'],
+        //         'series' => ['required'],
+        //         'sale_date' => ['required'],
+        //         'price' => ['required'],
+        //         'description' => ['required'],
+        //     ],
+        //     [
+        //         'title.required'=> 'Il campo titolo non può essere vuoto',
+        //         'type'=>'Selezionare il tipo di fumetto',
+        //         'series.required'=>'Il campo serie non può essere vuoto',
+        //         'price.required'=> 'Il campo prezzo non può essere vuoto',
+        // ]);
         $data = $request->all();
         $comic = new DcComic();
         $comic->fill($data);
         $comic->save();
-        return redirect()->route('dc-comics.show', ['dc_comic'=> $comic->id]);
+        return redirect()->route('dc-comics.show', ['dc_comic' => $comic->id]);
     }
 
     /**
@@ -67,7 +77,7 @@ class DcComicController extends Controller
     {
         $data = $request->all();
         $dcComic->update($data);
-        return redirect()->route('dc-comics.show', ['dc_comic'=> $dcComic->id]);
+        return redirect()->route('dc-comics.show', ['dc_comic' => $dcComic->id]);
     }
 
     /**
@@ -76,6 +86,6 @@ class DcComicController extends Controller
     public function destroy(DcComic $dcComic)
     {
         $dcComic->delete();
-        return redirect()->route('dc-comics.index', ['dc_comic'=> $dcComic->id]);
+        return redirect()->route('dc-comics.index', ['dc_comic' => $dcComic->id]);
     }
 }

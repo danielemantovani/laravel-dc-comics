@@ -29,6 +29,13 @@ class DcComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=>['required', 'min:5'],
+            'series'=>['required'],
+            'sale_date'=>['required'],
+            'price'=>['required'],
+            'description'=>['required'],
+        ]);
         $data = $request->all();
         $comic = new DcComic();
         $comic->fill($data);

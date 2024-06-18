@@ -27,7 +27,7 @@
                     <td>{{ $comic->type }}</td>
                     <td>{{ $comic->price }}</td>
                     <td>
-                        <div class="d-flex gap-2">
+                        <div class="d-flex justify-content-center gap-2">
                             <button class="btn btn-info">
                                 <a class="text-white"
                                     href="{{ route('dc-comics.show', ['dc_comic' => $comic->id]) }}">Dettagli</a>

@@ -43,6 +43,7 @@ class UpdateComicRequest extends FormRequest
             'type' => 'Selezionare il tipo di fumetto',
             'series.required' => 'Il campo serie non può essere vuoto',
             'price.required' => 'Il campo prezzo non può essere vuoto',
+            'description.required' => 'Il campo descrizione non può essere vuoto',
         ];
     }
 }

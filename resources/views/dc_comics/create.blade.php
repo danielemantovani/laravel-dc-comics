@@ -67,8 +67,16 @@
             </div>
             <div class="mb-5">
                 <label for="description" class="form-label">Descrizione</label>
-                <textarea class="form-control" id="description" rows="3" name="description">{{old('description')}}</textarea>
-            </div>
+                <textarea class="form-control
+                @error('description')
+                    is-invalid
+                @enderror"
+                id="description" rows="3" name="description">{{old('description')}}</textarea>
+                @error('description')
+                <div id="price-error" class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             <div>
                 <button class="btn btn-primary">Invia</button>
             </div>
